@@ -1,0 +1,68 @@
+
+class Employee {
+    int employeeID;
+    String employeeName;
+    double basicSalary;
+
+    Employee(int id, String name, double salary) {
+        employeeID = id;
+        employeeName = name;
+        basicSalary = salary;
+    }
+}
+
+
+class Manager extends Employee {
+    String department;
+
+    Manager(int id, String name, double salary, String dept) {
+        super(id, name, salary);
+
+        department = dept;
+    }
+}
+
+
+class ProjectManager extends Manager {
+    int teamSize;
+    String projectName;
+    int projectDuration;
+
+    ProjectManager(int id, String name, double salary,
+                   String dept, int size, String project, int duration) {
+
+        super(id, name, salary, dept);
+
+        teamSize = size;
+        projectName = project;
+        projectDuration = duration;
+    }
+
+    void displayDetails() {
+        System.out.println("Employee ID: " + employeeID);
+        System.out.println("Employee Name: " + employeeName);
+        System.out.println("Basic Salary: " + basicSalary);
+        System.out.println("Department: " + department);
+        System.out.println("Team Size: " + teamSize);
+        System.out.println("Project Name: " + projectName);
+        System.out.println("Project Duration: " + projectDuration + " months");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        ProjectManager pm = new ProjectManager(
+            101,
+            "Rahul",
+            60000,
+            "IT",
+            10,
+            "Online Shopping System",
+            6
+        );
+
+        System.out.println("Project Manager Details:");
+        pm.displayDetails();
+    }
+}
