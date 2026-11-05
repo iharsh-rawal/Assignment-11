@@ -1,0 +1,52 @@
+
+class Person {
+    String name;
+    int age;
+    String email;
+
+    
+    Person(String n, int a, String e) {
+        name = n;
+        age = a;
+        email = e;
+    }
+
+    void displayPersonDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Email: " + email);
+    }
+}
+
+
+class Student extends Person {
+    int studentID;
+    String course;
+
+    
+    Student(String n, int a, String e, int id, String c) {
+        super(n, a, e);
+
+        studentID = id;
+        course = c;
+    }
+
+    void displayStudentDetails() {
+        System.out.println("Student ID: " + studentID);
+        System.out.println("Course: " + course);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+
+        Student s1 = new Student(
+            "Rahul", 20, "rahul@gmail.com", 101, "BCA"
+        );
+
+        System.out.println("Personal Details:");
+        s1.displayPersonDetails();
+
+        System.out.println("\nAcademic Details:");
+        s1.displayStudentDetails();
+    }
+}
